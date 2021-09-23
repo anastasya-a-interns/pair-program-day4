@@ -1,6 +1,7 @@
 package com.minibootcamp.pasti;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
@@ -24,5 +25,12 @@ class LineTest {
         Line line1 = new Line(1, 2, 3, 4);
         Line line2 = new Line(1, 2, 3, 4);
         assertTrue(line1.compareLine(line2));
+    }
+
+    @Test
+    void compareLine_ShouldEqualFalse_WhenFirstX1andSecondX1Different() {
+        Line line1 = new Line(1, 2, 3, 4);
+        Line line2 = new Line(2, 2, 3, 4);
+        assertFalse(line1.compareLine(line2));
     }
 }
